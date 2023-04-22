@@ -1,0 +1,23 @@
+{
+  "animations": {},
+  "spriteSheets": {
+    "arrow": {
+      "fileName": "arrow.png",
+      "frameDimensions": {
+        "width": 32,
+        "height": 18
+      }
+    },
+    "press_spacebar": {
+      "fileName": "press_spacebar.png",
+      "type": "image"
+    }
+  },
+  "properties": {
+    "sprite": {
+      "defaultFrameIndex": 0,
+      "spriteSheet": "arrow",
+      "layers": []
+    }
+  }
+}

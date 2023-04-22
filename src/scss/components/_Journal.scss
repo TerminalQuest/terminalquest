@@ -1,0 +1,103 @@
+.Journal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.Journal .journal-inner {
+  margin: 20px auto;
+  max-width: 840px;
+  padding: 10px;
+}
+
+.Journal h2,
+.Journal b {
+  color: #ffe000;
+}
+
+.Journal em {
+  color: red;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.Journal .spacer {
+  clear: both;
+}
+
+.Journal h1 {
+  font-size: 22px;
+  color: #565b73;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.Journal h2 {
+  font-size: 22px;
+}
+
+.Journal h2.coming-soon {
+  color: #565b73;
+}
+
+.Journal .shield {
+  height: 128px;
+  width: 128px;
+  background: url(images/app/shield.png);
+  float: right;
+  margin: 10px;
+}
+
+.Journal .fog-owl {
+  height: 192px;
+  width: 192px;
+  background: url(images/app/journal/fog_owl.gif);
+  float: left;
+  margin: 10px;
+}
+
+.Journal .cedric-images {
+  width: 180px;
+  padding: 10px;
+  border: 3px solid #565b73;
+  float: right;
+  margin: 10px 10px 20px 10px;
+  text-align: center;
+}
+
+.Journal .cedric-images p {
+  color: #565b73;
+  font-size: 10px;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 3px 0;
+}
+
+.Journal .cedric-images p span {
+  color: cyan;
+}
+
+.Journal .cedric {
+  height: 128px;
+  width: 128px;
+  margin: 0 auto;
+  background: url(images/app/journal/cedric.png);
+}
+
+.Journal .cedric-sprite {
+  height: 32px;
+  width: 128px;
+  margin: 0 auto;
+  background: url(images/app/journal/cedric_sprite.png);
+}
+
+.Journal p {
+  font-family: $base-font-stack;
+  line-height: 1.6em;
+  font-size: 18px;
+}

@@ -1,0 +1,14 @@
+{ "columns":16,
+ "image":"FogOwlShip_Entrance.png",
+ "imageheight":144,
+ "imagewidth":384,
+ "margin":0,
+ "name":"FogOwlShip_Entrance",
+ "spacing":0,
+ "tilecount":96,
+ "tiledversion":"1.2.4",
+ "tileheight":24,
+ "tilewidth":24,
+ "type":"tileset",
+ "version":1.2
+}

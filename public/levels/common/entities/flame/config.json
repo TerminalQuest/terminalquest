@@ -1,0 +1,19 @@
+{
+  "animations": {
+    "burn": {
+      "frames": [96, 97],
+      "frameRate": 6
+    },
+    "burn2": {
+      "frames": [97, 96],
+      "frameRate": 6
+    }
+  },
+  "spriteSheets": {},
+  "properties": {
+    "sprite": {
+      "useGidAsDefaultFrameIndex": true,
+      "layers": []
+    }
+  }
+}

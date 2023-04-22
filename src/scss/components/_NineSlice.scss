@@ -1,0 +1,46 @@
+.nine-slice__container {
+  position: relative;
+}
+
+.nine-slice__background {
+  border-style: solid;
+  image-rendering: pixelated;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.nine-slice__content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #6db9cd;
+  }
+
+  h1 {
+    @media (max-height: 600px) {
+      font-size: 14px;
+      font-family: $base-font-stack;
+      text-overflow: ellipsis;
+    }
+  }
+
+  p.human-readable {
+    font-family: $base-font-stack;
+    @media (max-height: 600px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.nine-slice__content--row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

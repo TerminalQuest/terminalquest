@@ -1,0 +1,22 @@
+{
+  "title": "CTF: Terminal Safety",
+  "description": "The command line is powerful, and with great power comes great responsibility. <strong>Prove you understand this power</strong> to proceed further in the simulation.",
+  "validation_fields": [
+    {
+      "name": "one",
+      "type": "text",
+      "placeholder": "type True or False",
+      "label": "It is safe to copy and paste code or commands you find on the Internet into your command line interface, even if you don't know and trust the source they came from. True or false?"
+    },
+    {
+      "name": "two",
+      "type": "text",
+      "placeholder": "type True or False",
+      "label": "The command line app can move or delete files and folders with no 'do-over', so you should be careful when giving commands that concern files and folders. True or false?"
+    }
+  ],
+  "rewards": {
+    "xp": 100,
+    "items": []
+  }
+}

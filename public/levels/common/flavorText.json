@@ -1,0 +1,33 @@
+{
+  "tiledIdMaps": {
+    "scifi_tiles": {
+      "119": "bookshelf",
+      "121": "bookshelf",
+      "329": "bookshelf",
+      "331": "bookshelf",
+      "122": "drawerBookshelf",
+      "332": "drawerBookshelf",
+      "819": "blueCrystalFormation",
+      "820": "redCrystalFormation",
+      "821": "pinkCrystalFormation",
+      "822": "greenCrystalFormation",
+      "805": "tombstoneRIP",
+      "193": "crate"
+    },
+    "fantasy_tiles": {
+      "493": "vaseRed",
+      "86": "tombstoneRIP"
+    }
+  },
+  "text": {
+    "bookshelf": "Lots of good reads in here.",
+    "drawerBookshelf": "I wonder what is in that drawer...",
+    "blueCrystalFormation": "These are shards of pure <span style=\"color: blue\">Blue-anium</span>!",
+    "redCrystalFormation": "These are shards of solid <span style=\"color: red\">Red-ite</span>!",
+    "pinkCrystalFormation": "These are shards of 100% <span style=\"color: pink\">Pink-ygen</span>!",
+    "greenCrystalFormation": "These are shards of <span style=\"color: green\">Green-drate</span>!",
+    "tombstoneRIP": "You can't really make out the name...",
+    "vaseRed": "What a pretty vase!",
+    "crate": "A box of random stuff."
+  }
+}

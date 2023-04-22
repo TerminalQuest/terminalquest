@@ -1,0 +1,59 @@
+.dev-fundamentals-elevator {
+  .elevator-description-box {
+    margin: 12px;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes fadeBgToBlack {
+  from {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+.fade-bg-to-black {
+  animation-name: fadeBgToBlack;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeBgIn {
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.fade-bg-in {
+  animation-name: fadeBgIn;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeBgOutFromBlack {
+  from {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.fade-bg-out-from-black {
+  animation-name: fadeBgOutFromBlack;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeBgOut {
+  from {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.fade-bg-out {
+  animation-name: fadeBgOut;
+  animation-fill-mode: both;
+}

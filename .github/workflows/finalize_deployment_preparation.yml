@@ -1,0 +1,154 @@
+name: Finalize Deployment Preparation
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        type: choice
+        description: The version segment that was used to prepare a new release (i.e. the one chosen for the prepare_release_candidate workflow)
+        options:
+          - major
+          - minor
+          - patch
+        default: patch
+        required: true
+
+env:
+  preview_branch: 3.2_preview
+  main_branch: 3.2_main
+  next_branch: 3.2_next
+  node_version: 14
+  notification_title: 'Progress'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.preview_branch }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+      - name: Checking for prepared release with candidate
+        id: validation
+        run: |
+          echo ::notice title=${{ env.notification_title }}::"Checking for existing prep release and candidate"
+          cd public
+          npm --no-git-tag-version version ${{ inputs.release_type }}
+          git config user.name 'GitHub Action'
+          git config user.email '<>'
+          release_version=$(node -p "require('./package.json').version")
+          git fetch -q
+          if ! git checkout -f "release/${release_version}" ; then
+            echo ::error title=${{ env.notification_title }}::"At least one "prepared release" must exist before finalizing!"
+            exit 1
+          fi
+          git pull origin "release/${release_version}"
+          if ! npm --no-git-tag-version version $release_version ; then
+            echo ::error title=${{ env.notification_title }}::"At least one release candidate must exist before finalizing!"
+            exit 1
+          fi
+          echo ::set-output name=release_version::"${release_version}"
+      - name: Merging release across branches
+        if: ${{ success() }}
+        run: |
+          release_version="${{ steps.validation.outputs.release_version }}"
+          echo ::notice title=${{ env.notification_title }}::"Editing 'release/${release_version}' branch to '${{ env.preview_branch }}' branch PR title"
+          git tag "${release_version}"
+          git push origin --tags
+          git add .
+          git commit -m "Prepare ${release_version}"
+          git push origin "release/${release_version}"
+          gh pr edit --title "Release ${release_version}"
+          echo ::notice title=${{ env.notification_title }}::"Merging 'release/${release_version}' branch into '${{ env.preview_branch }}' branch"
+          if ! gh pr merge -m "release/${release_version}" ; then
+            echo ::error title=${{ env.notification_title }}::"Failed to merge 'release/${release_version}' branch into '${{ env.preview_branch }}'"
+            exit 1
+          fi
+          echo ::notice title=${{ env.notification_title }}::"Creating PR from '${{ env.preview_branch }}' branch into '${{ env.main_branch }}' branch"
+          git switch "${{ env.preview_branch }}"
+          git pull origin "${{ env.preview_branch }}"
+          if ! gh pr create --title "Release ${release_version}" --base "${{ env.main_branch }}" --fill ; then
+            echo ::error title=${{ env.notification_title }}::"Failed to create PR from '${{ env.preview_branch }}' branch into '${{ env.main_branch }}' branch"
+            exit 1
+          fi
+          echo ::notice title=${{ env.notification_title }}::"Merging '${{ env.preview_branch }}' branch into '${{ env.main_branch }}' branch"
+          if ! gh pr merge -m "${{ env.preview_branch }}" ; then
+            echo ::error title=${{ env.notification_title }}::"Failed to merge '${{ env.preview_branch }}' branch into '${{ env.main_branch }}' branch"
+            exit 1
+          fi
+          echo ::notice title=${{ env.notification_title }}::"Creating PR from '${{ env.main_branch }}' branch into '${{ env.next_branch }}' branch"
+          git switch "${{ env.main_branch }}"
+          git pull origin "${{ env.main_branch }}"
+          if ! gh pr create --title "Release ${release_version}" --base "${{ env.next_branch }}" --fill ; then
+            echo ::error title=${{ env.notification_title }}::"Failed to create PR from '${{ env.main_branch }}' branch to '${{ env.next_branch }}' branch"
+            exit 1
+          fi
+          echo ::notice title=${{ env.notification_title }}::"Merging '${{ env.main_branch }}' branch into '${{ env.next_branch }}' branch"
+          if ! gh pr merge -m "${{ env.main_branch }}" ; then
+            echo ::error title=${{ env.notification_title }}::"Failed to merge '${{ env.main_branch }}' branch into '${{ env.next_branch }}' branch"
+            exit 1
+          fi
+      - name: Cleaning up branches
+        if: ${{ success() }}
+        run: |
+          release_version="${{ steps.validation.outputs.release_version }}"
+          git push origin --delete "release/${release_version}"
+          echo ::notice title=${{ env.notification_title }}::"Fast forwarding '${{ env.main_branch }}' and '${{ env.preview_branch }}' branches to ensure they aren't 'behind' on commits after merger"
+          git pull origin "${{ env.next_branch }}"
+          git push origin "${{ env.main_branch }}"
+          git switch "${{ env.preview_branch }}"
+          git pull origin "${{ env.next_branch }}"
+          git push origin "${{ env.preview_branch }}"
+
+##COMMENTS##
+
+# Gives this workflow the permissions necessary for making PRs and merging.
+# >> GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# Increases part of package.json version number by 1, based on the 'release_type' input
+# >> npm --no-git-tag-version version ${{ inputs.release_type }}
+
+# Gets the package.json version for the preview branch and stores it in the 'new_version' bash variable to be
+# compared against later. Since we're never pushing changes to this branch's package.json (just updating a PR),
+# we get the correct release version for free
+# >> release_version=$(node -p "require('./package.json').version")
+
+# If we fail to checkout the release branch associated with "release_version", then no releases have been "prepped"
+# and we shoud stop here and issue an error message
+# >> if ! git checkout -f "release/${release_version}"
+
+# We pull down the contents of the release branch associated with "release_version", which should update our
+# package.json's version
+# >> git pull origin "release/${release_version}"
+
+# By default, the "npm version" command will throw an exception if you attempt to update the version to what
+# it's already set to (e.g. trying to set the version to "1.0.0" when it's already "1.0.0"). If an exception
+# is thrown, we assume that no release candidates have been created (which generally shouldn't be the case, since
+# we want to make sure things work before publishing changes), stop the workflow and issue an error message
+# >> if ! npm --no-git-tag-version version $release_version
+
+# Stores the value of the variable 'release_version' in the output of this step, which can be referenced by
+# using it's 'id'
+# >> echo ::set-output name=release_version::"${release_version}"
+
+# Grabs the output of the step with an id of 'validation' and stores in a variable called 'release_version'
+# >> release_version="${{ steps.validation.outputs.release_version }}"
+
+# Will only execute the step if the previous one ran successfully (this is the default behavior, but it's
+# better to be explicit in case that changes in the future)
+# >> if: ${{ success() }}
+
+# A convenient way to send local tags to the remote
+# >> git push origin --tags
+
+# Each instance of this command under the 'Merging release across branches' step is creating a pr.
+# The '--base' option allows us to choose which branch we'd like to merge into.
+# The '--fill' option automatically populates the body of the PR with commit messages
+# >> gh pr create --title "Release ${release_version}" --base "${{ env.main_branch }}" --fill
+
+# Deletes the release candidate branch (e.g. 'release/{x.y.z}') to avoid littering the branch list
+# >> git push origin --delete "${release_version}"

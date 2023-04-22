@@ -1,0 +1,19 @@
+{
+  "animations": {},
+  "spriteSheets": {
+    "highlight-tile": {
+      "fileName": "highlight-tile.png",
+      "frameDimensions": {
+        "width": 24,
+        "height": 24
+      }
+    }
+  },
+  "properties": {
+    "sprite": {
+      "defaultFrameIndex": 0,
+      "spriteSheet": "highlight-tile",
+      "layers": []
+    }
+  }
+}

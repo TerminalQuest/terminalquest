@@ -1,0 +1,79 @@
+.settings-menu {
+  .game-version {
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-family: $base-font-stack;
+    font-size: 24px;
+    color: $light-blue;
+    border-bottom: 2px dashed;
+    padding-bottom: 5px;
+    margin: 5px 0 20px 0;
+  }
+
+  .audio-table {
+    tr {
+      margin-bottom: 10px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 10px 30px 10px 0;
+    }
+
+    td input {
+      margin-right: 30px;
+    }
+  }
+
+  input:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+
+  .Credits {
+    a {
+      color: cyan;
+    }
+  }
+}
+
+.settings-menu p {
+  font-family: $base-font-stack;
+  line-height: 1.6em;
+  font-size: 14px;
+}
+
+.settings-menu h5 {
+  font-family: $base-font-stack;
+  font-size: 18px;
+
+  &.selected {
+    background-color: #0d122b;
+    color: #ffe000;
+    user-select: none;
+  }
+}
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+.shake {
+  animation-duration: 200ms;
+  animation-name: shake;
+}

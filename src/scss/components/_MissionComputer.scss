@@ -1,0 +1,158 @@
+.MissionComputer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .missions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 320px;
+
+    .missionSelection {
+      width: 250px;
+      height: 220px;
+      margin: 5px;
+      padding: 10px;
+      float: left;
+      cursor: pointer;
+      border: 3px solid $dark-bg;
+      text-align: center;
+
+      &.active,
+      &.active:hover {
+        border: 3px solid $selection-green;
+      }
+
+      &:hover {
+        border: 3px solid $dark-green;
+      }
+
+      .icon {
+        display: inline-block;
+        position: relative;
+        height: 96px;
+        width: 96px;
+
+        .progress {
+          position: absolute;
+          max-width: 100px;
+          bottom: -12px;
+          right: -10px;
+          border-radius: 5px;
+          background-color: $selection-green;
+          border: 2px solid $white;
+          padding: 4px;
+          font-family: $base-font-stack;
+          font-size: 12px;
+        }
+      }
+
+      h2 {
+        font-family: $base-font-stack;
+        font-size: 18px;
+        clear: both;
+        margin-top: 20px;
+        line-height: 1.6em;
+      }
+    }
+  }
+
+  .missionDescription {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    background-color: $light-green;
+    border: 5px solid $dark-green;
+    text-align: center;
+    padding: 10px;
+    overflow-y: auto;
+
+    h2 {
+      font-size: 18px;
+      font-family: $base-font-stack;
+      line-height: 1.6em;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+
+      &.inactive {
+        text-align: center;
+        font-family: $game-font-stack;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+      font-family: $base-font-stack;
+      text-align: left;
+      line-height: 1.4em;
+      padding: 10px 0 0 0;
+      margin: 0;
+    }
+
+    .icon {
+      float: right;
+      margin: 0 0 10px 10px;
+      height: 64px;
+      width: 64px;
+    }
+
+    .progress {
+      display: relative;
+      clear: both;
+      text-align: center;
+      line-height: 1.8em;
+      margin: 10px 0;
+      padding: 5px;
+      font-size: 12px;
+      background-color: $dark-bg;
+      color: $white;
+      border: 4px solid $dark-green;
+    }
+
+    .prereqs {
+      text-align: left;
+      font-family: $base-font-stack;
+      font-size: 14px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        span {
+          padding-right: 5px;
+        }
+
+        .checkbox {
+          font-size: 24px;
+        }
+      }
+    }
+
+    p {
+      clear: both;
+      font-size: 14px;
+      line-height: 1.6em;
+      font-family: $base-font-stack;
+      text-align: left;
+    }
+
+    a {
+      color: $yellow;
+      font-family: $base-font-stack;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

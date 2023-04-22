@@ -1,0 +1,13 @@
+{
+  "title": "Capture The Flag (New Dev Skill Training)",
+  "description": "Hone your foundational skills as a developer in a series of 'capture the flag' exercises. Learn how to use the command line, text editors, and other tools of the trade. No matter what kind of software you build, these skills will serve you well.",
+  "is_mission": true,
+  "priority": 2,
+  "backgroundMusic": "hackertheme_104771b",
+  "backgroundEffect": "vr",
+  "flavorTextOverrides": {
+    "notReady": "Looks like this part of the simulation isn't ready yet. <span class=\"highlight\">I should check back later</span>.",
+    "terminalHint": "The sign reads: \"Sometimes, you need to take a leap of faith and <span class=\"highlight\">step into the abyss</span>.\"",
+    "terminalHint2": "The sign reads: \"When your path seems blocked, <span class=\"highlight\">keep moving and feel your way around</span>.\""
+  }
+}

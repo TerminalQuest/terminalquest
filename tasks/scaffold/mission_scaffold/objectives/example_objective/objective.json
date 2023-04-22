@@ -1,0 +1,21 @@
+{
+  "title": "JavaScript Lab: Another Dimension",
+  "description": "Did you know that the items inside an array can be <strong>other arrays</strong>? Learn about this array inception in this objective!",
+  "validation_fields": [
+    {
+      "name": "answer1",
+      "type": "text",
+      "placeholder": "",
+      "label": "In the 2D array in the objective, what value is at index [0][0]?"
+    },
+    {
+      "name": "answer2",
+      "type": "text",
+      "placeholder": "",
+      "label": "In the 2D array in the objective, what value is at index [2][2]?"
+    }
+  ],
+  "rewards": {
+    "xp": 100
+  }
+}

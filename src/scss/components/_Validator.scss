@@ -1,0 +1,264 @@
+.Validator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 70%;
+  bottom: 0;
+  overflow: hidden;
+  border: 3px solid #2c3634;
+  background-color: #3e5154;
+
+  em {
+    color: #ffe000;
+  }
+}
+
+.Validator .status-readout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  background-color: #232323;
+  border: 2px solid #343434;
+  font-size: 16px;
+  height: 80px;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.Validator .status-readout .red {
+  color: red;
+}
+
+.Validator .status-readout .blue {
+  color: cyan;
+}
+
+.Validator .status-readout .green {
+  color: lime;
+}
+
+.Validator .validation-input {
+  position: absolute;
+  top: 90px;
+  bottom: 80px;
+  left: 10px;
+  right: 10px;
+  padding: 10px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: $base-font-stack;
+
+  textarea {
+    white-space: nowrap;
+    overflow: auto;
+    resize: none;
+    width: 100%;
+    height: 140px;
+  }
+}
+
+.Validator .validation-input::-webkit-scrollbar-thumb {
+  background: #787878;
+  border-radius: 0;
+}
+
+.Validator .validation-input::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  opacity: 0.25;
+}
+
+.Validator .validation-field {
+  margin: 0 5px 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #787878;
+
+  .prompt {
+    text-align: center;
+    line-height: 1.4em;
+  }
+}
+
+.Validator .validation-input label {
+  display: block;
+  font-family: $base-font-stack;
+  font-size: 14px;
+  line-height: 1.6em;
+  margin-bottom: 10px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.Validator .validation-input-text {
+  padding: 5px;
+  width: 100%;
+}
+
+.Validator .validation-input-text::placeholder {
+  color: #ccc;
+  font-style: italic;
+}
+
+.Validator .ide-prompt button {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 10px;
+}
+
+.Validator .ide-prompt button .inner {
+  margin-top: -10px;
+}
+
+.Validator .validation-feedback {
+  font-family: $base-font-stack;
+  text-align: center;
+  line-height: 1.6em;
+
+  strong {
+    color: $yellow;
+  }
+
+  a,
+  a:visited {
+    color: cyan;
+  }
+}
+
+.Validator p {
+  text-align: center;
+}
+
+.Validator p button {
+  font-size: 14px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  font-weight: bold;
+  color: #eee;
+  padding: 0 0 3px 0;
+}
+
+.Validator p button.get-objective-debug-info {
+  font-size: 12px;
+  border-bottom: none;
+  /* 
+    Making the element 'positioned', so that the custom tooltip (pseudo element) 
+    will move in relation to this
+  */
+  position: relative;
+
+  text-decoration: underline;
+  /* This prevents content from being moved around when the border appears */
+  border-bottom: 1px solid transparent;
+
+  margin-top: 48px;
+}
+
+.Validator p button.get-objective-debug-info:hover {
+  border-bottom: 1px solid;
+}
+
+.Validator p button.get-objective-debug-info.emphasis {
+  font-weight: bold;
+}
+
+.Validator p button.get-objective-debug-info {
+  &.objective-debug-info-copied::after {
+    content: 'Copied info to clipboard!';
+
+    display: inline-block;
+    position: absolute;
+    width: fit-content;
+    padding: 3px 4px;
+    margin: 0 auto;
+
+    border-radius: 10px;
+
+    background-color: gray;
+    color: white;
+
+    left: 0;
+    right: 0;
+    top: -38px;
+
+    z-index: 1;
+
+    transform-origin: center center;
+    animation: tooltipAppear 0.25s both;
+  }
+
+  &.objective-debug-info-copied.animateOut::after {
+    animation: tooltipDisappear 0.25s both;
+  }
+}
+
+@keyframes tooltipAppear {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tooltipDisappear {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+.Validator .validation-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  height: 76px;
+}
+
+.Validator .validation-button button {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .Validator .status-readout {
+    font-size: 14px;
+    height: 50px;
+  }
+
+  .Validator .validation-input {
+    top: 60px;
+  }
+
+  .Validator .validation-input,
+  .Validator .validation-input label,
+  .Validator .ide-desc {
+    font-size: 10px;
+  }
+
+  .Validator .ide-prompt button .inner {
+    margin-top: -8px;
+    font-size: 14px;
+  }
+}

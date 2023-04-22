@@ -1,0 +1,302 @@
+.ObjectiveDescription {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+
+  .reward-list {
+    min-height: 100px;
+  }
+
+  .item-desc {
+    display: inline-block;
+    max-width: 320px;
+    line-height: 1.4em;
+    text-align: center;
+  }
+
+  .objective-cleared {
+    
+    .shield {
+      img {
+        max-height: 200px;
+        display: inline-block;
+      }
+    }
+
+    h2 {
+      font-family: $game-font-stack;
+      font-size: 24px;
+      font-weight: bold;
+      font-style: italic;
+      color: $yellow;
+      border-bottom: none;
+    }
+
+    em {
+      color: $yellow;
+    }
+
+    a {
+      color: $blue;
+    }
+  }
+}
+
+.ObjectiveDescription .description-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 80px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.ObjectiveDescription .button-tabs {
+  display: flex;
+  justify-content: space-around;
+  background-color: #3e5154;
+  border: 2px solid #343434;
+}
+
+.ObjectiveDescription .objective-description-text {
+  text-align: center;
+  line-height: 1.6em;
+  margin:10px auto;
+  max-width: $max-column-width;
+  font-family: $base-font-stack;
+  font-size: 18px;
+
+  strong {
+    color: $yellow;
+  }
+}
+
+.ObjectiveDescription .cta-button {
+  text-align: center;
+  margin-top: 20px;
+  font-family: $game-font-stack;
+}
+
+.ObjectiveDescription .mission-intro {
+  padding: 10px 20px;
+  border: 1px solid;
+  background-color: #1f243c;
+  opacity: 0.8;
+  margin:10px auto;
+  max-width: $max-column-width;
+}
+
+.ObjectiveDescription .mission-intro p {
+  margin-left: 120px;
+}
+
+.ObjectiveDescription .mission-intro img {
+  margin-bottom: 10px;
+}
+
+.ObjectiveDescription .mission-intro h3 {
+  text-align: center;
+  color: #565b73;
+  font-size: 14px;
+  letter-spacing: 1ch;
+  text-indent: 1ch; /* compensate for letter-spacing being applied to the right of last letter */
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.ObjectiveDescription .mission-intro .avatar {
+  float: left;
+  margin: 0 20px 20px 0;
+  color: #565b73;
+  height: 96px;
+  width: 96px;
+}
+
+.ObjectiveDescription .objective-inner {
+  font-family: $base-font-stack;
+  line-height: 1.6em;
+  margin:0 auto;
+  max-width: $max-column-width;
+
+  &.objective, &.walkthrough {
+    background-color: #eee;
+    color: #111;
+    border: 4px solid $dark-green;
+    padding: 10px;
+    box-shadow: 0 0 5px 10px $light-green;
+    font-family: $reading-font-stack;
+    font-size: 18px;
+  }
+
+  em {
+    background-color: #515D75;
+    color: #eee;
+    border: 2px solid $dark-green;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 16px;
+    font-style: normal;
+    font-family: $base-font-stack;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+  }
+  
+  a, a:visited {
+    color: $blue;
+  }
+
+  img {
+    box-shadow: 0 0 5px 1px $dark-bg;
+  }
+
+  h1 {
+    background-color: $light-green;
+    font-family: $game-font-stack;
+    border-bottom: 4px solid $dark-green;
+    color: $white;
+    margin: -20px -14px 0 -14px;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 10px 20px;
+    font-style: italic;
+    border: 1px solid #ebcd8e;
+    background-color: #f9e4b7;
+    box-shadow: 2px 2px #787878;
+    color: #555;
+
+    hr {
+      color: #555;
+    }
+  }
+
+  details {
+    background-color: #dedede;
+    border: 1px solid #bbb;
+    padding: 10px;
+
+    summary {
+      font-weight: bold;
+      outline: none;
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: #ccc
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid;
+
+    th, td {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+
+    th {
+      text-align: left;
+      border: 1px solid;
+      background-color: #aaa;
+      font-family: $base-font-stack;
+      color: #000;
+    }
+  }
+
+  .aside {
+    float: right;
+    width: 250px;
+    border: 1px dashed;
+    margin: 10px 0 10px 10px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4em;
+
+    h3 {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+      border-bottom: 1px dashed;
+    }
+
+    code {
+      font-size: 14px;
+      border: none;
+      background-color: transparent;
+    }
+
+    em {
+      padding: 0 4px;
+    }
+
+    ul {
+      padding-left: 16px;
+      margin: 0;
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.ObjectiveDescription h2,
+.ObjectiveDescription h3,
+.ObjectiveDescription h4,
+.ObjectiveDescription h5  {
+  font-size: 18px;
+  padding-bottom: 5px;
+  margin: 10px 0;
+  line-height: 1.6em;
+  font-family: $base-font-stack;
+  font-weight: bold;
+  border-bottom: 2px dashed;
+}
+
+.ObjectiveDescription a, .ObjectiveDescription strong {
+  font-weight: bold;
+}
+
+.ObjectiveDescription li {
+  margin-bottom: 10px;
+}
+
+.ObjectiveDescription p {
+  line-height: 1.6em;
+}
+
+.ObjectiveDescription p code,
+.ObjectiveDescription li code {
+  font-family: $base-font-stack;
+  border: 1px solid #BCBEC0;
+  background: #F1F3F5;
+  color: red;
+  font-size: 16px;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.ObjectiveDescription pre {
+  overflow: auto;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.ObjectiveDescription details summary {
+  cursor: pointer;
+}

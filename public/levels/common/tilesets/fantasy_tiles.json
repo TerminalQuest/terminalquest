@@ -1,0 +1,14 @@
+{ "columns":57,
+ "image":"fantasy_tiles.png",
+ "imageheight":1008,
+ "imagewidth":1368,
+ "margin":0,
+ "name":"fantasy_tiles",
+ "spacing":0,
+ "tilecount":2394,
+ "tiledversion":"1.2.4",
+ "tileheight":24,
+ "tilewidth":24,
+ "type":"tileset",
+ "version":1.2
+}

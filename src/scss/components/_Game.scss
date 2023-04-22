@@ -1,0 +1,34 @@
+.Game {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.Game .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition: width 250ms 0ms;
+  background-color: #000;
+}
+
+.Game .loading.expanded {
+  transition: width 250ms 250ms;
+  width: 100%;
+}
+
+#game {
+  height: 100%;
+  width: 100%;
+}
+
+#game canvas {
+  margin: 0 auto;
+  image-rendering: pixelated;
+}

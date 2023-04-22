@@ -1,0 +1,16 @@
+{
+  "title": "CTF: Working with Folders",
+  "description": "One of the most common tasks for programmers at the CLI is <strong>working with folders</strong>, also called <strong>directories</strong>. Learn to create and navigate directories in this challenge!",
+  "validation_fields": [
+    {
+      "name": "pwdOutput",
+      "type": "text",
+      "placeholder": "e.g. C:\\Users\\kevin\\quest",
+      "label": "Paste the **last line only** of the output from the <em>pwd</em> command in the new folder you created."
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": []
+  }
+}

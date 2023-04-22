@@ -1,0 +1,16 @@
+.Button {
+  cursor: pointer;
+  height: 72px;
+  border: 20px solid transparent;
+  background-color: transparent;
+  border-image: url(images/app/button/button-up.png) 35 fill;
+  color: #eee;
+}
+
+.Button:hover {
+  opacity: 0.95;
+}
+
+.Button:active:hover {
+  border-image: url(images/app/button/button-down.png) 35 fill;
+}

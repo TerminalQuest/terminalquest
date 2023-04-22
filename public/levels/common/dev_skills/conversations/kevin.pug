@@ -1,0 +1,46 @@
+// Responses
+mixin what_is_tq3
+  response#what_is_tq3.
+    Tell me about TwilioQuest 3!
+
+mixin what_do_i_do
+  response#what_do_i_do.
+    What do I need to do in this training exercise?
+
+mixin have_ideas
+  response#have_ideas.
+    Who should I talk to if I have feedback or ideas for TwilioQuest?
+
+conversation(display_name="Kevin Whinnery")
+  case lastResponse
+    when "what_is_tq3"
+      statement
+        | Our goal is to use TwilioQuest to #[span.highlight teach one million developers] to code. To get there, we're trying something a little bit crazy. We're creating a role-playing game for PC, Mac, and Linux where your character will need to learn real-world engineering skills to oppose the villainous #[span(style="color: red;") Legacy Systems].
+        br
+        br
+        | Developers will learn how to use Twilio and SendGrid of course, but they'll learn how to use git, write SQL queries, and build React apps too.
+      responses
+        +what_do_i_do
+        +have_ideas
+
+    when "what_do_i_do"
+      statement.
+        To clear this mission, you'll need to get past two barriers. In the first one, we'll just need you to configure a SendGrid Web API key. In the second, we'll ask you to send an e-mail using TwilioQuest's built-in IDE.
+      responses
+        +what_is_tq3
+        +have_ideas
+
+    when "have_ideas"
+      statement.
+        That would be me! I mean, actual me. I'd love to hear any thoughts or feedback you have about TwilioQuest. Drop me an e-mail at #[a(href="mailto:kw@twilio.com") kw@twilio.com] - I'm given to understand you're quite talented at sending the e-mails.
+      responses
+        +what_is_tq3
+        +what_do_i_do
+    
+    default
+      statement.
+        What's up, Operator! This is a sneak preview of the #[span.highlight SendGrid] training exercise in TwilioQuest 3. There's not much to it yet, but we wanted to give you an idea of what we had in mind.
+      responses
+        +what_is_tq3
+        +what_do_i_do
+        +have_ideas

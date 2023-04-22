@@ -1,0 +1,30 @@
+// Responses
+mixin who_are_you
+  response#who_are_you.
+    Who are you?
+
+mixin what_do_i_do
+  response#what_do_i_do.
+    What is your job here?
+
+conversation(display_name="Mysterious Statue")
+  case lastResponse
+    when "who_are_you"
+      statement.
+        I am a super mysterious statue! #[span.highlight Tremble before me]!
+        Are you trembling? You're trembling, right? WHY AREN'T YOU TREMBLING!!!
+      responses
+        +what_do_i_do
+
+    when "what_do_i_do"
+      statement.
+        To make you #[span.highlight tremble], of course!
+      responses
+        +who_are_you
+
+    default
+      statement.
+        Halt! Who dares disturb my slumber?
+      responses
+        +who_are_you
+        +what_do_i_do

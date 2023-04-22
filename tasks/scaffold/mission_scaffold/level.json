@@ -1,0 +1,17 @@
+{
+  "title": "Scaffolded Mission",
+  "description": "This mission scaffold should get you up and running quickly!",
+  "is_mission": true,
+  "priority": 1,
+  "backgroundMusic": "hackertheme_104771b",
+  "backgroundEffect": {
+    "key": "starfield",
+    "options": {
+      "baseSpeed": 0.03,
+      "direction": "topToBottom"
+    }
+  },
+  "flavorTextOverrides": {
+    "bookshelf": "There's nothing like a good book."
+  }
+}

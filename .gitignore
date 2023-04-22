@@ -1,0 +1,23 @@
+.vscode/
+.DS_Store
+dist/
+node_modules
+thumbs.db
+QuestIDE
+src/js/app/config/local_config.js
+.env
+composer.json
+composer.lock
+vendor/
+
+# Do not ignore test fixtures mocking node_modules
+!src/test/fixtures/public/node_modules
+
+# Ignore generated artifacts in the public folder
+public/index.html
+public/index.js
+public/index.js.map
+public/index.css
+public/index.css.map
+public/app/
+public/test/

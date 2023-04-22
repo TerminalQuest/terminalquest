@@ -1,0 +1,24 @@
+{
+  "animations": {
+    "idle": {
+      "frames": [6, 7, 8, 9],
+      "frameRate": 4
+    }
+  },
+  "spriteSheets": {
+    "npc-scientists": {
+      "fileName": "NPC_Scientists.png",
+      "frameDimensions": {
+        "width": 32,
+        "height": 32
+      }
+    }
+  },
+  "properties": {
+    "sprite": {
+      "defaultFrameIndex": 6,
+      "spriteSheet": "npc-scientists",
+      "layers": []
+    }
+  }
+}

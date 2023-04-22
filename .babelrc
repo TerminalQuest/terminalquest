@@ -1,0 +1,29 @@
+{
+  "presets": ["@babel/preset-env", "@babel/react"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2,
+        "regenerator": true
+      }
+    ],
+    ["inline-json-import", {}]
+  ],
+  "env": {
+    "test": {
+      "presets": ["@babel/preset-env", "@babel/react"],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        [
+          "@babel/plugin-transform-runtime",
+          {
+            "corejs": 2,
+            "regenerator": true
+          }
+        ]
+      ]
+    }
+  }
+}

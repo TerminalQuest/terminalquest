@@ -1,0 +1,16 @@
+{
+  "title": "CTF: Stick to the Script",
+  "description": "It's a pain to have to type in the same commands over and over again. <strong>Learn to use a script</strong> to save complex commands, so you can run them the same way whenever you want.",
+  "validation_fields": [
+    {
+      "name": "scriptPath",
+      "type": "text",
+      "placeholder": "C:\\Users\\kw\\quest\\my_script.ps1",
+      "label": "Paste the full path to your new script file in the text field below."
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": []
+  }
+}

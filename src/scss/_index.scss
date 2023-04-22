@@ -1,0 +1,81 @@
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', $base-font-stack;
+  color: #eee;
+  overflow: hidden;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#app {
+  animation: fadein 0.42s;
+}
+
+a, a:visited {
+  color: $blue;
+  cursor: pointer;
+}
+
+a.underline {
+  padding-bottom: 2px;
+  text-decoration: none;
+  border-bottom: 1px solid #f22f46;
+}
+
+span.highlight {
+  color: #ffe000;
+}
+
+button {
+  outline: none;
+}
+
+.pointer {
+  user-select: none;
+}
+
+.pointer-plus {
+  cursor: copy;
+}
+
+#app {
+  position: relative;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+::-webkit-scrollbar-corner {
+  opacity: 0;
+}

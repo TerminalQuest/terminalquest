@@ -1,0 +1,50 @@
+div.__loading {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+}
+
+div.__loading img {
+  display: inline-block;
+  height: 192px;
+  width: 192px;
+  margin-right: 10px;
+  z-index: 9999;
+}
+
+div.__loading h2 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.4em;
+  letter-spacing: 0.5ch;
+  text-transform: uppercase;
+  font-family: Monaco, 'Roboto Mono', sans-serif;
+}
+
+div.__loading p {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #000;
+  border-radius: 5px;
+  opacity: 0.8;
+  line-height: 1.4em;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+div.__loading p strong {
+  font-weight: bold;
+  color: #ffe000;
+}
+
+.stars {
+  height: 200%;
+  width: 200%;
+  background: url(../images/app/stars.png);
+}

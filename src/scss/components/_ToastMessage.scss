@@ -1,0 +1,79 @@
+.ToastMessage {
+  position: relative;
+  background-color: #1f243c;
+  border: 2px solid #565b73;
+  border-radius: 5px;
+  font-family: $base-font-stack;
+  line-height: 1.6em;
+  font-size: 18px;
+  min-height: 120px;
+
+  img.operator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 100px;
+    width: 100px;
+  }
+
+  img.close {
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  span.content {
+    display: block;
+    margin: 10px 10px 10px 130px;
+  }
+}
+
+.ToastMessage span.highlight, .ToastMessage em {
+  color: #ffe000;
+}
+
+.ToastMessage span.red {
+  color: #ff0000;
+}
+
+.slideInUp {
+  animation: slideInUp 0.5s;
+}
+
+.slideOutDown {
+  animation: slideOutDown 0.5s;
+}
+
+/*
+ * Copied from Animate.css by Daniel Eden.
+ * https://daneden.github.io/animate.css/
+ */
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  animation-name: slideInUp;
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.slideOutDown {
+  animation-name: slideOutDown;
+}

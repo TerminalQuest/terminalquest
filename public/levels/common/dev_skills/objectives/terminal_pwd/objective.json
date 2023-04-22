@@ -1,0 +1,16 @@
+{
+  "title": "CTF: Using a Command Line Interface",
+  "description": "A key tool you will need on your journey as a developer is a <strong>command line interface</strong>. Learn to find and launch one for the first time, and execute a basic command!",
+  "validation_fields": [
+    {
+      "name": "pwdOutput",
+      "type": "text",
+      "placeholder": "e.g. C:\\Users\\kevin",
+      "label": "Paste the **last line only** of the output from the <em>pwd</em> command in the text field below."
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": []
+  }
+}

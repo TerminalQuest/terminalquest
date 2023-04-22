@@ -1,0 +1,36 @@
+{
+  "animations": {
+    "blink": {
+      "frames": [16, 17, 16],
+      "frameRate": 4
+    },
+    "idle": {
+      "frames": [
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 0
+      ],
+      "frameRate": 6
+    },
+    "idle2": {
+      "frames": [
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29
+      ],
+      "frameRate": 6
+    }
+  },
+  "spriteSheets": {
+    "npc-kevin": {
+      "fileName": "NPC_Kevin.png",
+      "frameDimensions": {
+        "width": 32,
+        "height": 32
+      }
+    }
+  },
+  "properties": {
+    "sprite": {
+      "defaultFrameIndex": 0,
+      "spriteSheet": "npc-kevin",
+      "layers": []
+    }
+  }
+}

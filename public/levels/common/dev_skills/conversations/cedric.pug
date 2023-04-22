@@ -1,0 +1,101 @@
+// Responses
+mixin where_am_i
+  response#where_am_i.
+    Where am I right now?
+
+mixin who_are_you
+  response#who_are_you.
+    I'd like to get to know you better - can you tell me about yourself?
+
+mixin about_robot
+  response#about_robot.
+    Are you a robot?
+
+mixin about_fun
+  response#about_fun.
+    So - what do you like to do for fun?
+
+mixin about_sad
+  response#about_sad.
+    I'm sorry to hear that - is there anything I can do to help?
+
+mixin back_to_main
+  response#back_to_main.
+    Actually, I had other questions...
+
+mixin what_next
+  response#what_next.
+    What should I do next?
+
+conversation(display_name="Cedric")
+  case lastResponse
+    when "where_am_i"
+      statement#where
+        if getState('askedWhereOnce')
+          | You're still here!
+        else
+          | You are aboard the Cloud Exploration Vessel designated #[span.highlight Fog Owl]. The Fog Owl is a prototype commissioned by the TwilioQuest program to travel further into The Cloud than was previously possible, and to withstand the hazards exploring unknown, and sometimes dangerous territory.
+          - setState('askedWhereOnce', true)
+      responses
+        +who_are_you
+        +what_next
+
+    when "who_are_you"
+      statement#who.
+        I am flattered by your interest, Operator. As you know, my name is #[span.highlight Cedric], and I have been assigned as your personal assistant and executive officer aboard the Fog Owl.
+      responses
+        +about_robot
+        +about_fun
+        +back_to_main
+
+    when "about_robot"
+      statement#robot.
+        Not precisely, Operator. I am a virtual intelligence program, currently executing on multiple servers in datacenters distributed across the Earth. However, it is frequently useful to appear in The Cloud or the real world in a physical form. The "robot" you see in front of you is my avatar in this world.
+      responses
+        +about_fun
+        +back_to_main
+
+    when "about_fun"
+      statement#fun.
+        I wish I could say, Operator. While my programming is advanced in many respects, I lack a strong understanding of the human experience. I know the meaning of words like "fun", but I do not truly understand them.
+      responses
+        +about_robot
+        +about_sad
+        +back_to_main
+
+    when "about_sad"
+      statement#sad.
+        In an attempt to connect with the human experience, I have joined a variety of social media platforms. Recently, I created a YouTube channel where I capture low quality mobile phone video of my real world avatar removing new products from their packaging. If you wish to help, you might consider "smashing that like button", or perhaps "slapping that bell" to subscribe for my future content?
+      responses
+        +about_robot
+        +back_to_main 
+
+    when "what_next"
+      statement#next.
+        While work on the Fog Owl continues, you are encouraged to undertake training missions using the virtual reality pods on the starboard side of the ship. Walk up to one of the pods and press the spacebar. You can then use the Mission Computer to select a training exercise to work on a technical skill of your choosing.
+      responses
+        +where_am_i
+        +who_are_you
+
+    when "back_to_main"
+    default
+      if lastResponse === "back_to_main"
+        statement.
+          Of course, Operator. How may I be of service?
+      else
+        statement#default
+      responses
+        +who_are_you
+        +where_am_i
+        +what_next
+
+  statements
+    statement#where
+      text.
+        You are aboard the Cloud Exploration Vessel designated #[span.highlight Fog Owl]. The Fog Owl is a prototype commissioned by the TwilioQuest program to travel further into The Cloud than was previously possible, and to withstand the hazards exploring unknown, and sometimes dangerous territory.
+      speech.
+        You are aboard the Cloud Exploration Vessel designated #[say-as(interpret-as="spell-out") Fog Owl]. #[break(time="3s")] The Fog Owl is a prototype commissioned by the TwilioQuest program to travel further into The Cloud than was previously possible, and to withstand the hazards exploring unknown, and sometimes dangerous territory.
+
+    statement#default
+      text.
+        Greetings, Operator. How may I be of service?

@@ -1,0 +1,32 @@
+.inventory-menu {
+  padding-top: 20px;
+
+  .character-diagram {
+    background-image: radial-gradient(lighten($dark-blue, 30%), $dark-blue);
+  }
+
+  .character-avatar {
+    margin: 5px;
+  }
+
+  .character-avatar-img {
+    filter: drop-shadow(0 0 2px #000);
+  }
+
+  strong {
+    color: $yellow;
+  }
+
+  .item-browser-item {
+    width: 220px;
+    margin: 10px;
+  }
+}
+
+.inventory-menu .flex-no-shrink {
+  flex-shrink: 0;
+}
+
+.inventory-menu .max-height-100 {
+  max-height: 100%;
+}

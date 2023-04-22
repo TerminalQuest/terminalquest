@@ -1,0 +1,85 @@
+.QuestIDE {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  overflow: hidden;
+  background-color: #232323;
+  font-family: $base-font-stack;
+}
+
+.QuestIDE .layout-splitter {
+  min-height: 6px;
+  background-color: #2c3634 !important;
+}
+
+.QuestIDE .code-editor {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.QuestIDE .console {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.QuestIDE .console #code-output {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  font-size: 14px;
+  padding-bottom: 20px;
+  line-height: 1.4em;
+  color: #787878;
+}
+
+.QuestIDE .console #code-output span {
+  display: block;
+  padding: 1px 3px;
+  white-space: pre;
+  font-family: $base-font-stack;
+}
+
+.QuestIDE .console #code-output span.error {
+  color: #ff6666;
+}
+
+.QuestIDE .console #code-output span.log {
+  color: #00ffff;
+}
+
+.QuestIDE .console #code-output span.warn {
+  color: yellow;
+}
+
+.QuestIDE .console .controls {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 0;
+  right: 10px;
+  height: 50px;
+  width: 200px;
+  border-radius: 2px;
+  border-left: 1px solid #2c3634;
+  border-right: 1px solid #2c3634;
+  border-bottom: 1px solid #2c3634;
+  background-color: #3e5154;
+  box-shadow: 0 0 5px #555;
+
+  .Button .inner {
+    margin-left: -6px;
+    margin-top: -8px;
+  }
+}

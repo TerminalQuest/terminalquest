@@ -1,0 +1,21 @@
+.AvatarSelector {
+  h1 {
+    margin: 10px 0;
+  }
+
+  .arrow {
+    padding-top: 6px;
+
+    &.pointer:active {
+      background-color: #137752;
+    }
+
+    &:last-child {
+      padding-left: 5px;
+    }
+  }
+
+  .character-avatar-img {
+    filter: drop-shadow(0 0 2px #eee);
+  }
+}

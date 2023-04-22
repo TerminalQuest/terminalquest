@@ -1,0 +1,24 @@
+{
+  "animations": {
+    "open": {
+      "frames": [0, 1],
+      "frameRate": 2
+    }
+  },
+  "spriteSheets": {
+    "autumnChest": {
+      "fileName": "AutumnChest.png",
+      "frameDimensions": {
+        "width": 24,
+        "height": 24
+      }
+    }
+  },
+  "properties": {
+    "sprite": {
+      "defaultFrameIndex": 0,
+      "spriteSheet": "autumnChest",
+      "layers": []
+    }
+  }
+}

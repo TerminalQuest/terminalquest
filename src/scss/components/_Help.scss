@@ -1,0 +1,38 @@
+.Help {
+  p {
+    font-family: $base-font-stack;
+    font-size: 18px;
+    line-height: 1.6em;
+    max-width: 640px;
+  }
+
+  h4 {
+    color: $light-blue;
+    border-bottom: 2px dashed;
+    padding-bottom: 5px;
+    max-width: 640px;
+  }
+
+  strong {
+    font-weight: bold;
+    color: $yellow;
+  }
+
+  a, a:visited {
+    color: $blue;
+  }
+}
+
+/*
+.help-menu .article {
+  line-height: 1.25;
+}
+
+.help-menu .contents h3 {
+  cursor: pointer;
+}
+
+.help-menu .contents h3.selected {
+  cursor: default;
+}
+*/

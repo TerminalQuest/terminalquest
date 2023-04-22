@@ -1,0 +1,112 @@
+{ "columns":28,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
+ "image":"AutumnForest_Tileset.png",
+ "imageheight":576,
+ "imagewidth":672,
+ "margin":0,
+ "name":"AutumnForest_Tileset",
+ "spacing":0,
+ "terrains":[
+        {
+         "name":"grass",
+         "tile":30
+        }, 
+        {
+         "name":"path",
+         "tile":34
+        }],
+ "tilecount":672,
+ "tiledversion":"1.3.4",
+ "tileheight":24,
+ "tiles":[
+        {
+         "id":1,
+         "terrain":[1, 1, 1, 0]
+        }, 
+        {
+         "id":2,
+         "terrain":[1, 1, 0, 0]
+        }, 
+        {
+         "id":3,
+         "terrain":[1, 1, 0, 1]
+        }, 
+        {
+         "id":5,
+         "terrain":[0, 0, 0, 1]
+        }, 
+        {
+         "id":6,
+         "terrain":[0, 0, 1, 1]
+        }, 
+        {
+         "id":7,
+         "terrain":[0, 0, 1, 0]
+        }, 
+        {
+         "id":29,
+         "terrain":[1, 0, 1, 0]
+        }, 
+        {
+         "id":30,
+         "terrain":[0, 0, 0, 0]
+        }, 
+        {
+         "id":31,
+         "terrain":[0, 1, 0, 1]
+        }, 
+        {
+         "id":32,
+         "terrain":[0, 1, 1, 0]
+        }, 
+        {
+         "id":33,
+         "terrain":[0, 1, 0, 1]
+        }, 
+        {
+         "id":34,
+         "terrain":[1, 1, 1, 1]
+        }, 
+        {
+         "id":35,
+         "terrain":[1, 0, 1, 0]
+        }, 
+        {
+         "id":57,
+         "terrain":[1, 0, 1, 1]
+        }, 
+        {
+         "id":58,
+         "terrain":[0, 0, 1, 1]
+        }, 
+        {
+         "id":59,
+         "terrain":[0, 1, 1, 1]
+        }, 
+        {
+         "id":60,
+         "terrain":[1, 0, 0, 1]
+        }, 
+        {
+         "id":61,
+         "terrain":[0, 1, 0, 0]
+        }, 
+        {
+         "id":62,
+         "terrain":[1, 1, 0, 0]
+        }, 
+        {
+         "id":63,
+         "terrain":[1, 0, 0, 0]
+        }],
+ "tilewidth":24,
+ "type":"tileset",
+ "version":1.2
+}

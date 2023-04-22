@@ -1,0 +1,53 @@
+.ButtonBar {
+  position: relative;
+  height: 72px;
+  display: flex;
+}
+
+.ButtonBar .leftCap,
+.ButtonBar .rightCap {
+  display: inline-block;
+  clear: both;
+  background: url(images/app/button_bar/button-default.png);
+  width: 48px;
+  height: 72px;
+}
+
+.ButtonBar .rightCap {
+  background-position: -68px 0;
+}
+
+.ButtonBar .buttonContainer {
+  display: flex;
+}
+
+.ButtonBar button {
+  color: #999;
+  text-align: center;
+  opacity: 0.8;
+  cursor: pointer;
+  height: 72px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  border-image: url(images/app/button_bar/button-bg.png) 35 fill;
+  border-image-width: 72px;
+  padding: 0 15px;
+}
+
+.ButtonBar button:hover {
+  color: #ccc;
+  opacity: 0.9;
+}
+
+.ButtonBar button.active {
+  opacity: 1;
+  color: #fff;
+}
+
+.ButtonBar .buttonSpacer {
+  display: inline-block;
+  height: 72px;
+  width: 8px;
+  background: url(images/app/button_bar/button-default.png);
+  background-position: 48px 0;
+}

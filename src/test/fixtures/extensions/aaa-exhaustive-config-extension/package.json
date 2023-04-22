@@ -1,0 +1,8 @@
+{
+  "name": "aaa-extension",
+  "description": "an extension description",
+  "version": "0.0.1",
+  "engines": {
+    "twilioquest": "3.2.0"
+  }
+}

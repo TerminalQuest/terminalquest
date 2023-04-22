@@ -1,0 +1,28 @@
+// Responses
+mixin who_are_you
+  response#who_are_you.
+    Who #[span.highlight are] you?
+
+mixin great
+  response#great.
+    Great...
+
+conversation(display_name="Cedric")
+  case lastResponse
+    when "who_are_you"
+      statement#who_are_you
+      responses
+        +great
+
+    default
+      statement#default
+      responses
+        +who_are_you
+
+  statements
+    statement#who_are_you
+      text.
+        I am your robotic assistant, Cedric! Unfortunately, I need to take a rest after creating this scaffolded mission for you, so you're on your own now. 
+    statement#default
+      text.
+        Hi! Welcome to the TerminalQuest scaffolded mission! Any resemblance to a real TerminalQuest mission is purely coincidental. Please disregard.

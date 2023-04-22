@@ -1,0 +1,120 @@
+.Conversation {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Conversation .frosty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #777;
+  opacity: 0.5;
+}
+
+.Conversation .dialogue-box {
+  width: 860px;
+  z-index: 1;
+  border: 2px solid #565b73;
+  background-color: #1f243c;
+  border-radius: 5px;
+  display: flex;
+  font-family: $base-font-stack;
+
+  .avatar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px 0 10px;
+
+    img {
+      margin-top: 20px;
+    }
+
+    p {
+      margin: 5px 20px 20px 20px;
+      text-align: center;
+      line-height: 1.6em;
+    }
+  }
+
+  .dialogue {
+    flex: 3;
+    padding-bottom: 20px;
+
+    p {
+      margin: 20px 20px 30px 0;
+      line-height: 1.8em;
+    }
+
+    .conversationChoice {
+      font-size: 16px;
+      line-height: 1.6em;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      padding-right: 20px;
+      color: #999;
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.Conversation .dialogue-ui.no-portrait {
+  left: 20%;
+  right: 20%;
+}
+
+.Conversation .dialogue-ui h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #565b73;
+  border-bottom: 2px solid #565b73;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+
+.Conversation .dialogue-ui p {
+  line-height: 1.8em;
+  max-width: 1024px;
+  font-family: $base-font-stack;
+}
+
+.Conversation span.highlight {
+  font-weight: bold;
+  color: #ffe000;
+}
+
+.Conversation span.red {
+  font-weight: bold;
+  color: red;
+}
+
+.Conversation span.orange {
+  font-weight: bold;
+  color: orange;
+}
+
+.Conversation .dialogue-inner {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.Conversation .dialogue-inner a {
+  color: #ffe000;
+}

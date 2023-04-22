@@ -1,0 +1,27 @@
+doctype html
+head
+  title TerminalQuest
+  link(rel="stylesheet" type="text/css" href="index.css")
+  link(rel="stylesheet" type="text/css" href="lib/loading.css")
+  link(rel="stylesheet" type="text/css" href="lib/tachyons.min.css")
+  link(rel="stylesheet" type="text/css" href="lib/highlight.css")
+  link(rel="stylesheet" type="text/css" href="lib/fontawesome/css/all.min.css")
+  link(rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css")
+
+body
+  #app
+    .stars
+    .__loading
+      // Cheat and preload the giant logo image so it doesn't blink in later
+      // img(style="display:none;" src="images/app/logo.svg")
+
+      img(src="images/app/fog_owl.gif")
+      h2 Loading
+      p.
+        Interact with <strong>spacebar</strong>. <br/> Move with <strong>arrow keys</strong> or <strong>WASD</strong>.
+
+  script(src="lib/firebase/firebase-app.js")
+  script(src="lib/firebase/firebase-firestore.js")
+  script(src="lib/ace/ace.js")
+  script(src="lib/phaser-2.13.2.min.js")
+  script(src="index.js")

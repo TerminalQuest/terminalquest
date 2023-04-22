@@ -1,0 +1,17 @@
+{
+  "title": "CTF: Plant a Tree!",
+  "description": "Playing TwilioQuest supports reforestation in Australia. Click <strong>HACK</strong>, and Twilio will donate a dollar to plant a tree!",
+  "validation_fields": [
+    {
+      "name": "prompt",
+      "type": "prompt",
+      "placeholder": "",
+      "label": "Click HACK to plant a tree."
+    }
+  ],
+  "show_ide": false,
+  "rewards": {
+    "xp": 100
+  },
+  "hidden": true
+}
