@@ -123,7 +123,7 @@ export default class TitleScreen extends React.Component {
           fontSize: '3em',
           textAlign: 'center' 
         }}>
-          TerminalQuest
+          <img src="images/app/logo.png"/>
         </div>
         <div className="controls">
           <span onClick={() => this.onPlayerPressedStart()}>
