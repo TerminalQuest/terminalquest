@@ -1,7 +1,7 @@
-name: Build
+name: Build and Release 
 on:
     push:
-    pull_request:
+    workflow_dispatch:
     
 jobs:
     build_app:
@@ -34,9 +34,9 @@ jobs:
               with:
                  node-version-file: '.nvmrc'
             - run: |
-            npm install --save-dev @electron-forge/cli
-            npm exec --package=@electron-forge/cli -c "electron-forge import"
-            
+               npm install --save-dev @electron-forge/cli
+               npm exec --package=@electron-forge/cli -c "electron-forge import"
+
 
 
 
