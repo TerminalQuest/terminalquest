@@ -8,7 +8,7 @@
   "main": "main.js",
   "scripts": {
     "start": "npm-run-all build:all -r --parallel launch watch:all",
-    "ci": "npm-run-all install:app build:all release",
+    "ci": "npm-run-all install:app build:all",
     "install:build": "npm install",
     "install:app": "cd ./public && npm install",
     "postinstall": "npm run install:app",

@@ -1,0 +1,44 @@
+name: Build
+on:
+    push:
+    pull_request:
+    
+jobs:
+    build_app:
+        name: Build and Test
+        timeout-minutes: 20
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                 node-version-file: '.nvmrc'
+            - run: | 
+                npm ci && \
+                npm test && \
+                npm run ci 
+
+    package_app:
+        name: Package app
+        timeout-minutes: 20
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                 node-version-file: '.nvmrc'
+            - run: |
+            npm install --save-dev @electron-forge/cli
+            npm exec --package=@electron-forge/cli -c "electron-forge import"
+            
+
+
+
+            
+            
