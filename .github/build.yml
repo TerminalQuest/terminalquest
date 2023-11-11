@@ -1,11 +1,10 @@
 name: Build and Release 
 on:
-    push:
     workflow_dispatch:
     
 jobs:
     build_app:
-        name: Build and Test
+        name: install and Test
         timeout-minutes: 20
         strategy:
             matrix:
@@ -17,12 +16,11 @@ jobs:
               with:
                  node-version-file: '.nvmrc'
             - run: | 
-                npm ci && \
-                npm test && \
-                npm run ci 
+                npm ci && npm test 
+
 
     package_app:
-        name: Package app
+        name: Package and publish
         timeout-minutes: 20
         strategy:
             matrix:
@@ -34,8 +32,8 @@ jobs:
               with:
                  node-version-file: '.nvmrc'
             - run: |
-               npm install --save-dev @electron-forge/cli
-               npm exec --package=@electron-forge/cli -c "electron-forge import"
+               npm run ci
+               npm run publish
 
 
 
