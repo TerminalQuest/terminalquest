@@ -20,7 +20,10 @@ jobs:
 
 
     package_app:
+        needs: [build_app]
         name: Package and publish
+        env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
         timeout-minutes: 20
         strategy:
             matrix:
@@ -34,3 +37,9 @@ jobs:
             - run: |
                npm run ci
                npm run publish
+
+
+
+
+            
+            
