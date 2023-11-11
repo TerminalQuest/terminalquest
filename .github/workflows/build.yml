@@ -16,9 +16,7 @@ jobs:
               with:
                  node-version-file: '.nvmrc'
             - run: | 
-                npm i fsevents@latest -f --save-optional
-                npm ci 
-                npm test 
+                npm i fsevents@latest  --save-optional && npm ci && npm test 
 
 
     package_app:
