@@ -1,0 +1,42 @@
+name: Build and Release 
+on:
+    workflow_dispatch:
+    
+jobs:
+    build_app:
+        name: install and Test
+        timeout-minutes: 20
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                 node-version-file: '.nvmrc'
+            - run: | 
+                npm ci && npm test 
+
+
+    package_app:
+        name: Package and publish
+        timeout-minutes: 20
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                 node-version-file: '.nvmrc'
+            - run: |
+               npm run ci
+               npm run publish
+
+
+
+
+            
+            
