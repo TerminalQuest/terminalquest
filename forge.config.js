@@ -41,7 +41,7 @@ module.exports = {
       config: {
         repository: {
           owner: 'Xlient',
-          name: 'TerminalQuest'.concat("-",os.platform, os.arch)
+          name: 'terminalquest'
         },
         prerelease: true
       }

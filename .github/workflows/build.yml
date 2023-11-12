@@ -24,7 +24,7 @@ jobs:
         name: Package and publish
         env:
             GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        timeout-minutes: 20
+        timeout-minutes: 35
         strategy:
             matrix:
                 os: [windows-latest]
