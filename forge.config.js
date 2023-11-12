@@ -30,7 +30,7 @@ module.exports = {
         config: {
           icon: 'public/images/app/logo.png',
           iconSize: 42,
-          name: 'TerminalQuest',
+          name: 'TerminalQuest'.concat("-",os.platform, os.arch),
           format: 'ULFO'
         }
       },
