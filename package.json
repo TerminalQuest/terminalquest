@@ -28,7 +28,8 @@
     "watch:html": "pug src/templates/index.pug -o public -P -w",
     "test": "jest src/test/*",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "dependencies": {
     "@babel/cli": "^7.8.4",
