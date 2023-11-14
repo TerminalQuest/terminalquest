@@ -54,7 +54,8 @@ module.exports = {
           owner: 'Xlient',
           name: 'terminalquest'
         },
-        prerelease: true
+        prerelease: true,
+        draft: false
       }
     }
   ],
