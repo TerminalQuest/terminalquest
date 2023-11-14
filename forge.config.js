@@ -23,17 +23,21 @@ module.exports = {
     {
       name: '@electron-forge/maker-deb',
       config: {
-        description: 'The TerminalQuest game client',
-        name: 'TerminalQuest',
-        homepage:'https://terminal.quest/'
+        options: {
+            description: 'The TerminalQuest game client',
+            name: 'TerminalQuest',
+            homepage:'https://terminal.quest/'
+        }
       },
     },
     {
       name: '@electron-forge/maker-rpm',
       config: {
-        description: 'The TerminalQuest game client',
-        name: 'TerminalQuest',
-        homepage:'https://terminal.quest/'
+        options: {
+            description: 'The TerminalQuest game client',
+            name: 'TerminalQuest',
+            homepage:'https://terminal.quest/'
+        }
       },
     },
     {
