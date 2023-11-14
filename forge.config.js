@@ -61,7 +61,7 @@ module.exports = {
       const gypPath = path.join(
         buildPath,
         'node_modules',
-        'moduleName',
+        'node-sass',
         'build',
         'node_gyp_bins'
       );
