@@ -56,7 +56,7 @@ module.exports = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
-          owner: 'Xlient',
+          owner: 'terminalquest',
           name: 'terminalquest'
         },
         prerelease: true,

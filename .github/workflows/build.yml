@@ -3,24 +3,8 @@ on:
     workflow_dispatch:
     
 jobs:
-    # build_app:
-    #     name: install and Test
-    #     timeout-minutes: 20
-    #     strategy:
-    #         matrix:
-    #             os: [ubuntu-latest, windows-latest, macos-latest]
-    #     runs-on: ${{ matrix.os }}
-    #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: actions/setup-node@v3
-    #           with:
-    #              node-version-file: '.nvmrc'
-    #         - run: | 
-    #             npm ci
-
 
     package_app:
-        #needs: [build_app]
         name: Package and publish
         env:
             GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -34,7 +18,7 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                  node-version-file: '.nvmrc'
-                 
+
             - uses: actions/setup-python@v4
               with:
                 python-version: '3.9'
