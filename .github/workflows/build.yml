@@ -34,6 +34,10 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                  node-version-file: '.nvmrc'
+                 
+            - uses: actions/setup-python@v4
+              with:
+                python-version: '3.9'
             - run: |
                npm ci
                npm run ci
