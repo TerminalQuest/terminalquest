@@ -35,6 +35,7 @@ module.exports = {
       config: {
         options: {
             description: 'The TerminalQuest game client',
+            productDescription: 'TerminalQuest is role-playing game where you - as an elite agent known as the Operator - embark on an adventure to explore and safeguard the virtual universe of The Cloud. To do so, you will need to master the tools of software development and beyond.',
             name: 'TerminalQuest',
             homepage:'https://terminal.quest/'
         }
