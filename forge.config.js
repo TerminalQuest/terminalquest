@@ -1,4 +1,7 @@
 var os = require('os');
+const path = require('path')
+const fs = require('node:fs/promises');
+
 module.exports = {
   packagerConfig: {
     asar: true,
@@ -53,4 +56,16 @@ module.exports = {
       config: {},
     },
   ],
+  hooks: { // workaround for dangling symlink issue : https://github.com/nodejs/node-gyp/issues/2713
+    packageAfterPrune: async (_config, buildPath) => {
+      const gypPath = path.join(
+        buildPath,
+        'node_modules',
+        'moduleName',
+        'build',
+        'node_gyp_bins'
+      );
+      await fs.rm(gypPath, {recursive: true, force: true});
+   }
+ }
 };
