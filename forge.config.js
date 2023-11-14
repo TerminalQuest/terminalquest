@@ -12,7 +12,7 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         authors: 'TerminalQuest',
-        description: 'TerminalQuest',
+        description: 'The TerminalQuest game client',
         iconUrl: 'https://github.com/TerminalQuest/terminalquest/blob/main/public/images/app/logo.png'
       },
     },
@@ -22,11 +22,19 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        description: 'The TerminalQuest game client',
+        name: 'TerminalQuest',
+        homepage:'https://terminal.quest/'
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {
+        description: 'The TerminalQuest game client',
+        name: 'TerminalQuest',
+        homepage:'https://terminal.quest/'
+      },
     },
     {
         name: '@electron-forge/maker-dmg',
