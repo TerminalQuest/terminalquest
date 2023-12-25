@@ -1,5 +1,6 @@
 name: Build and Release 
 on:
+    push:
     workflow_dispatch:
     
 jobs:
