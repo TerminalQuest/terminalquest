@@ -3,11 +3,10 @@ on:
     workflow_dispatch:
     
 jobs:
-
     package_app:
         name: Package and publish
         env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+            GITHUB_TOKEN: ${{ github.token }}
         timeout-minutes: 35
         strategy:
             matrix:
