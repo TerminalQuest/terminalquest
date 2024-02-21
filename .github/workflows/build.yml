@@ -1,0 +1,35 @@
+name: Build and Release 
+on:
+    pull_request:
+
+    workflow_dispatch:
+    
+jobs:
+    package_app:
+        name: Package and publish
+        env:
+            GITHUB_TOKEN: ${{ secrets.RELEASE_PAT }}
+        timeout-minutes: 35
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                 node-version-file: '.nvmrc'
+
+            - uses: actions/setup-python@v4
+              with:
+                python-version: '3.9'
+            - run: |
+               npm ci
+               npm run ci
+               npm run publish
+
+
+
+
+            
+            
