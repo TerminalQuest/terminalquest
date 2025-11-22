@@ -34,3 +34,9 @@ This will open a local [Electron](https://www.electronjs.org) window running the
 The source code for the game is available under an MIT license (see `LICENSE`).
 
 The artwork, music, and other creative assets in this repository are available under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0) license.
+
+## Re-purposed for DIU
+
+This project is repurposed for DIU Software Engineering Club purposes. Original works can be found here:
+
+[Terminal Quest](https://github.com/TerminalQuest/terminalquest)
